@@ -1,0 +1,18 @@
+version: '3'
+services:
+    bind9:
+        container_name: myLabDNS
+        image: ubuntu/bind9:latest
+        environment:
+            - BIND9_USER=root
+            - TZ=Asia/Kolkata
+        ports:
+            - "192.168.0.103:53:53/tcp"    # Use system IP
+            - "192.168.0.103:53:53/udp"
+        volumes:
+            - ./config:/etc/bind
+            - ./cache:/var/cache/bind
+            - ./records/var/lib/bind
+            
+        restart: unless-stopped
+

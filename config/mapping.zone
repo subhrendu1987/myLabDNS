@@ -1,0 +1,20 @@
+; COMMENTS
+$TTL 2d
+$ORIGIN uclnetlocal.idrbt.ac.in.
+
+@	IN	SOA	ns.uclnetlocal.idrbt.ac.in.	5gucl.uclnetlocal.idrbt.ac.in (	; SOA record
+							06012023	;Serial No. /Date
+							12h		;refresh time
+							15m		;retyr time
+							3w		;expire
+							2d		;TTL
+							)
+	IN	NS	ns.uclnetlocal.idrbt.ac.in.						; Name server record
+ns	IN	A	192.168.0.103								; Resolve IP for name server
+
+; -- Add rest of the DNS records
+mobile		IN	A	192.168.0.154
+*.mobile	IN	A	192.168.0.154		; e.g. resolve abc.mobile
+garbage	IN	A	192.168.0.111
+; -- End of DNS records
+
