@@ -1,9 +1,15 @@
-# Download ubuntu/bind9 from dockerhub
+# Environment config
+## Install docker
+
+## Download ubuntu/bind9 from dockerhub
 `sudo docker pull ubuntu/bind9`
 
+## Stop local resolver
+Edit `/etc/systemd/resolved.conf` and add `DNSStubListener=no`
 
-# Tutorial
-### [Video](https://www.youtube.com/watch?v=syzwLwE3Xq4)
+## Tutorial
+[Video](https://www.youtube.com/watch?v=syzwLwE3Xq4)
+
 
 # Configuration
 ## docker-compose.yaml
