@@ -1,14 +1,17 @@
 # Environment config
 ## Install docker
 
+## Tutorial
+[Video](https://www.youtube.com/watch?v=syzwLwE3Xq4)
+
+## Docker references
+[Cheat sheet](https://github.com/subhrendu1987/DockerCommandReferences/blob/main/README.md)
+
 ## Download ubuntu/bind9 from dockerhub
 `sudo docker pull ubuntu/bind9`
 
 ## Stop local resolver
 Edit `/etc/systemd/resolved.conf` and add `DNSStubListener=no`
-
-## Tutorial
-[Video](https://www.youtube.com/watch?v=syzwLwE3Xq4)
 
 
 # Configuration
