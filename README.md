@@ -15,8 +15,14 @@ Edit `/etc/systemd/resolved.conf` and add `DNSStubListener=no`
 
 
 # Configuration
+##
+Used topology in this example
+```
+<mobile 192.168.0.104> --- <Router 192.168.0.1> --- <DNS serv 192.168.0.103>
+```
+
 ## docker-compose.yaml
-Modify ports directive and use your own IP
+Modify ports directive and use your own IP (i.e. in my case 192.163.0.103)
 ```
         ports:
             - "<IP address of system>:53:53/tcp"	
@@ -62,4 +68,10 @@ ns	IN	A	192.168.0.103								; Resolve IP for name server
 ```
 mobile		IN	A	192.168.0.154
 *.mobile	IN	A	192.168.0.154		; e.g. resolve abc.mobile 
+```
+### Test DNS
+```
+nslookup www.google.com 192.168.0.103 					# Success implies forwarding is fine
+nslookup mobile.uclnetlocal.idrbt.ac.in 192.168.0.103 	# Success implies local resolution is fine
+nslookup abc.mobile.uclnetlocal.idrbt.ac.in 192.168.0.103
 ```
